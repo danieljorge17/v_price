@@ -19,19 +19,19 @@ async def post_product(product: ProductSchema, db: AsyncSession = Depends(get_se
     """
     new_product = ProductModel(
         barcode=product.barcode,
-        barcode_type=product.barcode_type,
+        barcode_type=product.barcodeType,
         product=product.product,
         size=product.size,
-        size_unid=product.size_unid,
+        size_unit=product.sizeUnit,
         volume=product.volume,
-        volume_unid=product.volume_unid,
+        volume_unit=product.volumeUnit,
         weight=product.weight,
-        weight_unid=product.weight_unid,
+        weight_unit=product.weightUnit,
         location=product.location,
-        id_location=product.id_location,
-        unit_price=product.unit_price,
-        wholesale_quant=product.wholesale_quant,
-        wholesale_unit_price=product.wholesale_unit_price
+        id_location=product.idLocation,
+        unit_price=product.unitPrice,
+        wholesale_quant=product.wholesaleQuant,
+        wholesale_unit_price=product.wholesaleUnitPrice
     )
 
     db.add(new_product)
@@ -81,19 +81,19 @@ async def put_product(product_id: int, product: ProductSchema, db: AsyncSession 
 
         if product_up:
             product_up.barcode = product.barcode,
-            product_up.barcode_type = product.barcode_type,
+            product_up.barcode_type = product.barcodeType,
             product_up.product = product.product,
             product_up.size = product.size,
-            product_up.size_unid = product.size_unid,
+            product_up.size_unit = product.sizeUnit,
             product_up.volume = product.volume,
-            product_up.volume_unid = product.volume_unid,
+            product_up.volume_unit = product.volumeUnit,
             product_up.weight = product.weight,
-            product_up.weight_unid = product.weight_unid,
+            product_up.weight_unit = product.weightUnit,
             product_up.location = product.location,
-            product_up.id_location = product.id_location,
-            product_up.unit_price = product.unit_price,
-            product_up.wholesale_quant = product.wholesale_quant,
-            product_up.wholesale_unit_price = product.wholesale_unit_price
+            product_up.id_location = product.idLocation,
+            product_up.unit_price = product.unitPrice,
+            product_up.wholesale_quant = product.wholesaleQuant,
+            product_up.wholesale_unit_price = product.wholesaleUnitPrice
 
             await session.commit()
 

@@ -6,19 +6,19 @@ from pydantic import BaseModel as SCBaseModel
 class ProductSchema(SCBaseModel):
     id: Optional[int]
     barcode: str
-    barcode_type: Optional[str]
+    barcodeType: Optional[str]
     product: str
     size: Optional[float]
-    size_unid: Optional[str]
+    sizeUnit: Optional[str]
     volume: Optional[float]
-    volume_unid: Optional[str]
+    volumeUnit: Optional[str]
     weight: Optional[float]
-    weight_unid: Optional[str]
+    weightUnit: Optional[str]
     location: str
-    id_location: Optional[int]
-    unit_price: float
-    wholesale_quant: Optional[int]
-    wholesale_unit_price: Optional[float]
+    idLocation: Optional[int]
+    unitPrice: float
+    wholesaleQuant: Optional[int]
+    wholesaleUnitPrice: Optional[float]
 
     class Config:
         orm_mode = True
